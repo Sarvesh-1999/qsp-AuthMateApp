@@ -14,13 +14,35 @@ signupForm.addEventListener("submit", (e) => {
   const newData = {
     id: Date.now(),
     username: username.value,
-    email:email.value,
-    password:password.value
+    email: email.value,
+    password: password.value,
   };
-  console.log(newData);
+  console.log(newData); // {id :1 , u}
 
-  // clearing input fields
-  username.value = ""
-  email.value = ""
-  password.value =""
+  //! check weather data exists or not
+  let existingData = localStorage.getItem("users");
+
+  //! if users exist parse it and store , else store empty array
+  existingData = existingData ? JSON.parse(existingData) : [];
+
+  //! check user already exists or not
+  let existingUser = existingData.find((ele) => ele.email === newData.email);
+
+  if (existingUser) {
+    alert("User already exists");
+  } else {
+    //! add new data
+    existingData.push(newData);
+
+    //! store data in localStorage
+    localStorage.setItem("users", JSON.stringify(existingData));
+
+    //! redirect to login.html
+    window.location.href = "Login.html";
+  }
+
+  //! clearing input fields
+  username.value = "";
+  email.value = "";
+  password.value = "";
 });
