@@ -15,17 +15,18 @@ loginForm.addEventListener("submit", (e) => {
   console.log(loginData);
 
   //! get all signup users from local storage
-  let signupUsers = JSON.parse(localStorage.getItem("users"))
+  let signupUsers = JSON.parse(localStorage.getItem("users"));
 
   //! check user signed up or not
-  let authUser = signupUsers.find((ele)=> {
-    return ele.email === loginData.email && ele.password === loginData.password
-  })
+  let authUser = signupUsers.find((ele) => {
+    return ele.email === loginData.email && ele.password === loginData.password;
+  });
 
   if (authUser) {
     alert("login success 🚀");
-  }else{
+    window.location.href = "Home.html";
+    localStorage.setItem("authuser" , JSON.stringify(authUser))
+  } else {
     alert("login failed ❌");
   }
-
 });

@@ -87,3 +87,58 @@ body {
     padding: 20px;
   }
 }
+
+
+/* Navbar */
+.navbar{
+  height: 70px;
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+.navbar>.logo{
+  font-weight: 700;
+  font-size: 22px;
+}
+.sidemenu{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.username{
+  font-weight: 600;
+}
+
+/* main-container */
+.container{
+  width: 100%;
+  padding: 50px;
+  border: 1px solid black;
+}
+.postCard{
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px black;
+}
+.postCard>p{
+  padding: 10px 0;
+}
+.postCard>.tags{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.postCard>.tags>span{
+  box-shadow: 0 0 2px gray;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background-color: #3b82f6;
+  color: white;
+}
